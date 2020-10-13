@@ -1,2 +1,2 @@
-# exclude everything except directory foo/bar
-    /mongo-migrator/Terraform/plugins/*
+# exclude everything except directory foo/bari
+/mongo-migrator/Terraform/plugins/*
