@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  </head>
+
+  <body>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+      <h1 class="mt-5" style="color:#03A611">Welcome to Mongo Mover !! </h1>
+      <p class="font-weight-bold">Making your migration experiences easier. This tool lets to migrate collection documents from your mongodb database to astra with no effort.</p>
+      <p>Use <a href="../sticky-footer-navbar/">documenation to understand</a> how it works behind the scene.</p>
+      <br>
+      <br>
+      <h4> Connect to Mongo DB </h4>
+      <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <p> Click 'Connect' initate the mongodb connection and get total documents for migration</p>
+        <button type="submit" class="btn btn-primary" value="{{request.POST.q}}">CONNECT</button>
+      </form>
+      <br>
+      <p>Total documents Identified : {{count}}</p>
+      <br>
+      <br>
+      
+      <h4> Migrate Documents to Astra </h4>
+      <form action="status/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        
+        <p>To <a href="../sticky-footer-navbar/">initate the document migration</a> click below.</p>
+        <button type="submit" class="btn btn-warning" value="Migrate">MIGRATE</button>
+      </form>
+    </main>
+
+  </body>
+</html>
